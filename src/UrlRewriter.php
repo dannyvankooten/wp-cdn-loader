@@ -26,12 +26,6 @@ class UrlRewriter {
 	}
 
 	public function add_hooks() {
-
-		// add nothing if cdn url is empty
-		if( '' === $this->cdn_url ) {
-			return false;
-		}
-
 		// add rewrite filters for plugin & theme assets
 		add_filter( 'theme_root_uri', array( $this, 'rewrite' ), 99, 1 );
 		add_filter( 'plugins_url', array( $this, 'rewrite' ), 99, 1 );

@@ -3,7 +3,7 @@
 Plugin Name: CDN Loader
 Description: This plugin will load your assets from a given CDN instead of the local server.
 Author: Danny van Kooten
-Version: 1.0
+Version: 1.0.1
 Author URI: https://dannyvankooten.com/
 */
 
@@ -18,14 +18,18 @@ add_action( 'template_redirect', function() {
 	// Don't run if SCRIPT_DEBUG is set to true
 	if( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
 		return;
+	}	
+
+	if( ! defined( 'DVK_CDN_URL' ) ) {
+		return;
 	}
 
 	// load class
 	require_once __DIR__ . '/src/UrlRewriter.php';
 
 	// get url of cdn & site
-	$cdn_url = ( defined( 'DVK_CDN_URL' ) ? DVK_CDN_URL : '' );
-	$site_url = get_site_url();
+	$cdn_url = DVK_CDN_URL;
+	$site_url = get_home_url();
 
 	// instantiate class
 	$url_rewriter = new UrlRewriter( $cdn_url, $site_url );
