@@ -1,0 +1,17 @@
+{
+    "name": "dannyvankooten/wp-cdn-loader",
+    "type": "wordpress-plugin",
+    "description": "Replaces WordPress theme & plugin asset URL's with a CDN's URL",
+    "keywords": ["wordpress","cdn"],
+    "homepage": "https://github.com/dannyvankooten/wp-cdn-loader",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Danny van Kooten",
+            "homepage": "http://dvk.co",
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+}
