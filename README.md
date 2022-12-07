@@ -1,3 +1,7 @@
+This repository moved to https://git.sr.ht/~dvko/wp-cdn-loader on 2022-12-07 :warning: 
+
+---
+
 # CDN Loader for WordPress
 
 Simple plugin that will load all public assets from a CDN instead of your local server.
